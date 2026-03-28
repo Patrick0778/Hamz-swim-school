@@ -108,24 +108,16 @@ h1, h2, h3 {
     border-radius: 50px;
     position: sticky;
     top: 20px;
-    font-weight: 600;
-    z-index: 100;
-    transition: all 0.3s ease;
-}
-    border-bottom: solid color-mix(in srgb, var(--text-color), transparent 90%);
-    /*ends here*/
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
     font-weight: 800;
-    margin: 10px;
-    width: 90%;
-    max-width: 1200px;
-    border-radius: 50px;
-    border: 1px solid color-mix(in srgb, var(--text-color), transparent 85%);
-   /*color: var(--text-color); */
     z-index: 1001;
-    transition: all 0.4s;
+    transition: all 0.4s ease;
+    
+    /* Reduced transparency so it's readable over complex backgrounds */
+    background: color-mix(in srgb, var(--bg-color) 85%, transparent);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid color-mix(in srgb, var(--text-color), transparent 85%);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
 .logo{
     display: inline-block;
@@ -163,8 +155,10 @@ h1, h2, h3 {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: url(../imgs/coach\ hamz.jpg) center/cover;
-    opacity: 0.15;
+    opacity: 0.6; /* Increased opacity so the coach is much more visible */
     z-index: -1;
+    /* Soft blend mode to merge the photo with the glass orbs without hiding it completely */
+    mix-blend-mode: overlay; 
 }
 
 .hero-content {
@@ -206,14 +200,21 @@ h1, h2, h3 {
 
 .about-flex {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse; /* Reverses order on small screens so text is below image, but on large screens image is on right */
     gap: 40px;
     align-items: center;
     justify-content: center;
 }
 
+@media (min-width: 900px) {
+    .about-flex {
+        flex-wrap: nowrap;
+        flex-direction: row-reverse; /* On wide screens: Text wraps on the left, Image is on the right */
+    }
+}
+
 .about-text {
-    flex: 1;
+    flex: 1.5; /* Takes up slightly more space for the text wrapping */
     min-width: 300px;
     padding: 40px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -228,6 +229,7 @@ h1, h2, h3 {
     margin-bottom: 20px;
     font-size: 1.1rem;
     color: var(--text-color);
+    line-height: 1.8;
 }
 
 .about-image {
@@ -236,6 +238,8 @@ h1, h2, h3 {
     padding: 15px;
     transition: transform 0.3s ease;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .about-image:hover {
