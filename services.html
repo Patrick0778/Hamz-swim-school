@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & booking | Hamz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <nav class="navbar">
+        <div class="logo"><img src="imgs/SWIM.png" alt="hamz logo" style="max-height: 40px;" >Hamz swim school</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="shop.html" >Shop</a> </li>
+            <li><a href="services.html" class="active">Services</a> </li>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </ul>
+    </nav>
+    <header class="services-header">
+        <div class="container">
+            <h1>Our services</h1>
+            <p>Expert coaching and pro pool man=intence solutions</p>
+        </div>
+    </header>
+
+    <section class="service-section" id="lessons">
+        <div class="conatiner">
+            <h2>Swimming Lessons & coaching</h2>
+            <p>Book your slot for private or group coaching</p>
+            <div class="calender-container">
+                <h3>Availabilty Schedule</h3>
+                <div class="calender-grid" id="lesson-calender">
+                    <p class="loading">Loading schedule...</p>
+                </div>
+            </div>
+            <a href="http://wa.me/256708009153?text=I%20want%20to%20to%20book%20a%20swimming%20lesson" 
+                         class="btn-service" >Inquire about lessons</a>
+        </div>
+    </section>
+    <hr class="section-divider">
+    <section class="service-section" id="water-treatment">
+        <div class="container">
+            <h2>Pool water treatment</h2>
+            <p>Specialised chemical balancing, algaecide application etc.</p>
+            <div class="treatment-features">
+                <ul>
+                    <li>✅ PH and chlorine balancing </li>
+                    <li>✅Greento blue recovery </li>
+                    <li>✅Flocculation and vacuuming</li>
+                </ul>
+            </div>
+            <a href="http://wa.me/256708009153?text=I%20want%20to%20to%20book%20a%20professional%20pool-cleanse" 
+                         class="btn-service" >Book Water treatment</a>
+        
+        </div>
+
+    </section>
+
+    <a href="http://wa.me/256708009153" class="whatsapp-float" target="_blank">
+        <img src="imgs/whatsapp-128-svgrepo-com.svg" alt="Whatsapp">
+    </a>
+    <div class="marquee-fixed">
+        <div class="marquee-content" id="marquee-text">
+            <span>&nbsp;</span>
+        </div>
+    </div>
+    
+   <script type="module" src="js/main.js"></script> 
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin dashboard | Hamz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body">
+      <nav class="navbar">
+        <div class="logo">Hamz [ADMIN]</div>
+        <ul class="nav-links">
+            <li><a href="index.html">View site</a> </li>
+            <li><button id="logout-btn" >logout</button> </li>
+        </ul>
+    </nav>
+
+    <!-- Login Form (shown when not authenticated) -->
+    <div id="login-section" class="container" style="display: none; max-width: 400px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 8px;">
+        <h2>Admin Login</h2>
+        <form id="login-form">
+            <input type="email" id="login-email" placeholder="Email" required style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px;">
+            <input type="password" id="login-password" placeholder="Password" required style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px;">
+            <button type="submit" class="btn-save" style="width: 100%; padding: 10px; cursor: pointer;">Sign In</button>
+            <p id="login-error" style="color: red; margin-top: 10px;"></p>
+        </form>
+    </div>
+
+    <div class="container admin-container" style="display: none;">
+        <h1>DashBoard Control</h1>
+        <section class="admin-card">
+            <h2>Update floating marquee</h2>
+            <p>Type the text that scrolls at the bottom of all pages.</p>
+            <textarea placeholder="e.g. 50% off Goggles this week!" id="marquee-input"></textarea>
+            <button onclick="updateMarquee()" class="btn-save">Update Marquee</button>
+        </section>
+
+        <section class="admin-card">
+            <h2>Manage shop products</h2>
+            <form action="" id="add-product-form">
+                <input type="text" id="prod-name" placeholder="Product Name" required>
+                <input type="number" name="" id="prod-price" placeholder="Price (UGX)" required>
+                <input type="text" id="prod-img-url" placeholder="Product Image URL (https://...)" required>
+                <button type="submit" class="btn-add">Add Product to shop</button>
+            </form>
+            <div id="admin-product-list"></div>
+        </section>
+        <section class="admin-card">
+            <h2>Update Home Page Poster</h2>
+            <input type="text" id="poster-title" placeholder="Poster Title(e.g. Hiring!)">
+            <textarea name="" id="poster-desc" placeholder="Brief description..."></textarea>
+            <input type="text" id="poster-url" placeholder="Poster Image URL (https://...)">
+            <button onclick="updatePoster()" class="btn-save">Update Poster</button>
+        </section>
+        <section class="admin-card">
+            <h2>Availability Toggler</h2>
+            <p>Set each day’s mode: Public, Booked (Solo), Corporate only, or Unavailable.</p>
+            <div id="admin-calender-controls">
+                <p>Select dates and status</p>
+            </div>
+        </section>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
